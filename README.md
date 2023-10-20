@@ -1,7 +1,7 @@
 # Laporan Proyek Machine Learning
-### Nama :
-### Nim :
-### Kelas :
+### Nama : Ardi Nursahwal
+### Nim : 211351022
+### Kelas : Malam B
 
 ## Domain Proyek
 
