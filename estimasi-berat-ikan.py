@@ -1,5 +1,3 @@
-pip install scikit-learn
-
 import pickle
 import streamlit as st
 from sklearn.preprocessing import LabelEncoder
