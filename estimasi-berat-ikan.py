@@ -13,14 +13,14 @@ Length3 = st.number_input('Input Panjang silang dalam cm')
 Height = st.number_input('Input Tinggi dalam cm')
 Width = st.number_input('Input Lebar diagonal dalam cm')
 
-label_encoder_spec = LabelEncoder()
-label_encoder_spec.fit(['Perch', 'Bream', 'Roach', 'Pike', 'Smelt', 'Parkki', 'Whitefish'])
-spec_encoded = label_encoder_spec.transform([Species])[0]
+label_encoder_species = LabelEncoder()
+label_encoder_species.fit(['Perch', 'Bream', 'Roach', 'Pike', 'Smelt', 'Parkki', 'Whitefish'])
+specices_encoded = label_encoder_species.transform([Species])[0]
 
 predict = ''
 
 if st.button('Estimasi Berat Ikan'):
     predict = model.predict(
-        [[spec_encoded,Length1,Length2,Length3,Height,Width]]
+        [[specices_encoded,Length1,Length2,Length3,Height,Width]]
     )
     st.write ('Estimasi Berat Ikan Dalam gram : ', predict)
