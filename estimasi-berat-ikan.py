@@ -13,9 +13,9 @@ Length3 = st.number_input('Input Panjang silang dalam cm')
 Height = st.number_input('Input Tinggi dalam cm')
 Width = st.number_input('Input Lebar diagonal dalam cm')
 
-LabelEncoder = label_encoder_spec()
+label_encoder_spec = LabelEncoder()
 label_encoder_spec.fit(['Perch', 'Bream', 'Roach', 'Pike', 'Smelt', 'Parkki', 'Whitefish'])
-spec_encoded = label_encoder_sex.transform([sex2])[0]
+spec_encoded = label_encoder_spec.transform([Species])[0]
 
 predict = ''
 
