@@ -1,6 +1,6 @@
 import pickle
 import streamlit as st
-from sklearn.preprocessing import LabelEncoder
+
 
 model = pickle.load(open('estimasi_ikan.sav', 'rb'))
 
@@ -21,6 +21,6 @@ predict = ''
 
 if st.button('Estimasi Berat Ikan'):
     predict = model.predict(
-        [[specices_encoded,Length1,Length2,Length3,Height,Width]]
+        [[specices_encoded, Length1, Length2, Length3, Height, Width]]
     )
     st.write ('Estimasi Berat Ikan Dalam gram : ', predict)
