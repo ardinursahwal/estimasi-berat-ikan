@@ -85,8 +85,7 @@ Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, probl
 - Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
 
 ## Deployment
-[Estimasi Berat Ikan](https://estimasi-berat-ikan-ardi.streamlit.app/)
-
+[Estimasi Berat Ikan](https://tugas-uts-ardi.streamlit.app/)
 **---Ini adalah bagian akhir laporan---**
 
 _Catatan:_
