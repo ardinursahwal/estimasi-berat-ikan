@@ -1,6 +1,6 @@
-from sklearn.preprocessing import LabelEncoder
 import pickle
 import streamlit as st
+from sklearn.preprocessing import LabelEncoder
 
 model = pickle.load(open('estimasi_ikan.sav', 'rb'))
 
