@@ -44,19 +44,16 @@ dataset: [Fish Market](https://www.kaggle.com/datasets/vipullrathod/fish-market)
 Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
 
 ### Variabel-variabel pada Dataset adalah sebagai berikut:
-- Weight: Kolom ini menunjukkan berat ikan. Ini adalah variabel numerik yang biasanya diukur dalam gram. Berat adalah variabel dependen yang ingin kita prediksi menggunakan regresi polinomial.
-- Length1: Kolom ini mewakili pengukuran pertama dari panjang ikan. Ini adalah variabel numerik, biasanya diukur dalam sentimeter.
-- Length2: Kolom ini mewakili pengukuran kedua dari panjang ikan. Ini adalah variabel numerik lain, biasanya diukur dalam sentimeter.
-- Length3: Kolom ini mewakili pengukuran ketiga dari panjang ikan. Mirip dengan dua kolom sebelumnya, ini adalah variabel numerik, biasanya diukur dalam sentimeter.
-- Height: Kolom ini mewakili tinggi ikan. Ini adalah variabel numerik, biasanya diukur dalam sentimeter.
-- Width: Kolom ini mewakili lebar ikan. Seperti variabel numerik lainnya, ini juga biasanya diukur dalam sentimeter.
+- Spesies : Nama spesies ikan ('Bream', 'Roach', 'Whitefish', 'Parkki', 'Perch', 'Pike', 'Smelt')
+- Weight: Berat ikan dalam gram
+- Length1: Panjang vertikal ikan dalam CM
+- Length2: Panjang diagonal ikan dalam CM
+- Length3: Panjang silang ikan dalam CM
+- Height: Tinggi ikan dalam CM
+- Width: Lebar diagonal ikan dalam CM
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
