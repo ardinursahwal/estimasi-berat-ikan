@@ -5,7 +5,7 @@
 
 ## Domain Proyek
 
-Indonesia adalah salah satu negara yang memiliki sumber daya perikanan yang sangat kaya dan beragam. 
+Ikan sangat penting di Indonesia karena merupakan sumber mata pencaharian bagi jutaan nelayan, mendukung ekonomi lokal, dan berperan dalam ekosistem laut yang penting bagi keseimbangan lingkungan. Indonesia adalah salah satu negara dengan keragaman hayati laut yang luar biasa, dan konservasi serta pengelolaan sumber daya ikan menjadi kunci dalam menjaga kelangsungan hidup ikan dan mendukung kehidupan berkelanjutan di kepulauan Indonesia. 
 
 ## Business Understanding
 
@@ -37,19 +37,19 @@ Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pe
     - Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. dataset wajib menggunakan [kaggle](https://www.kaggle.com/) dan **atribut yang digunakan minimal 8 atribut**. Sertakan juga sumber atau tautan untuk mengunduh dataset.<br> 
+Dataset pasar ikan adalah kumpulan data yang terkait dengan berbagai spesies ikan dan karakteristiknya. Dataset ini disusun sedemikian rupa sehingga setiap baris berhubungan dengan satu ikan dengan spesiesnya dan berbagai ukuran fisik (panjang, tinggi, dan lebar)
 
 dataset: [Fish Market](https://www.kaggle.com/datasets/vipullrathod/fish-market).
 
 Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
 
-### Variabel-variabel pada Heart Failure Prediction Dataset adalah sebagai berikut:
-- Age : merupakan umur pasien dalam satuan tahun.
-- Sex : merupakan jenis kelamin pasien meliputi [M: Male, F: Female].
-- dst
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+### Variabel-variabel pada Dataset adalah sebagai berikut:
+- Weight: Kolom ini menunjukkan berat ikan. Ini adalah variabel numerik yang biasanya diukur dalam gram. Berat adalah variabel dependen yang ingin kita prediksi menggunakan regresi polinomial.
+- Length1: Kolom ini mewakili pengukuran pertama dari panjang ikan. Ini adalah variabel numerik, biasanya diukur dalam sentimeter.
+- Length2: Kolom ini mewakili pengukuran kedua dari panjang ikan. Ini adalah variabel numerik lain, biasanya diukur dalam sentimeter.
+- Length3: Kolom ini mewakili pengukuran ketiga dari panjang ikan. Mirip dengan dua kolom sebelumnya, ini adalah variabel numerik, biasanya diukur dalam sentimeter.
+- Height: Kolom ini mewakili tinggi ikan. Ini adalah variabel numerik, biasanya diukur dalam sentimeter.
+- Width: Kolom ini mewakili lebar ikan. Seperti variabel numerik lainnya, ini juga biasanya diukur dalam sentimeter.
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
