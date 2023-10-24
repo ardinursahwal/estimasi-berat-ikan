@@ -2,7 +2,7 @@ import pickle
 import streamlit as st
 from sklearn.preprocessing import LabelEncoder
 
-model = pickle.load(open('estimasi_ikan.sav', 'rb'))
+model = pickle.load(open('estimasi_bikan.sav', 'rb'))
 
 st.title('Estimasi Berat Ikan Dalam gram')
 
