@@ -9,7 +9,7 @@ Ikan merupakan sumber protein yang berguna untuk mereka yang sedang melakukan di
 
 ## Business Understanding
 
-Proyek ini dibuat untuk mempermudah siapapun yang ingin mengetahui berat ikan Perch, Bream, Roach, Pike,Smelt,Parkki dan Whitefish tanpa perlu menimbangnya secara langsung. Model ini dibuat untuk mendapatkan estimasi berat ikan dalam satuan gram dengan inputan :
+Proyek ini dibuat untuk mempermudah siapapun yang ingin mengetahui estimasi berat ikan Perch, Bream, Roach, Pike,Smelt,Parkki dan Whitefish tanpa perlu menimbangnya secara langsung. Model ini dibuat untuk mendapatkan estimasi berat ikan dalam satuan gram dengan inputan :
 
 berat ikan dalam gram
 panjang vertikal dalam cm
