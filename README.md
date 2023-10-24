@@ -5,36 +5,37 @@
 
 ## Domain Proyek
 
-Ikan merupakan sumber protein yang berguna untuk mereka yang sedang melakukan diet daging merah dan menggunakan ikan sebagai pengganti sumber proteinnya. Penjualan ikan pun terus meningkat dari waktu ke waktu dikarenakan permintaan ikan yang meningkat. Pengukuran berat ikan merupakan hal penting dalam industri perikanan dan kelautan. Estimasi yang akurat tentang berat ikan dapat membantu nelayan, petani ikan, dan pengusaha perikanan untuk mengelola stok ikan, merencanakan produksi, dan mengoptimalkan proses bisnis mereka.
+Ikan merupakan sumber protein yang berguna untuk mereka yang sedang melakukan diet daging merah dan menggunakan ikan sebagai pengganti sumber proteinnya. Penjualan ikan pun terus meningkat dari waktu ke waktu dikarenakan permintaan ikan yang meningkat.
 
 ## Business Understanding
 
-Proyek ini dibuat untuk mempermudah siapapun yang ingin mengetahui berat ikan Perch, Bream, Roach, Pike,Smelt,Parkki dan Whitefish tanpa perlu menimbangnya secara langsung. Terlebih untuk industri yang hanya memiliki data.
+Proyek ini dibuat untuk mempermudah siapapun yang ingin mengetahui berat ikan Perch, Bream, Roach, Pike,Smelt,Parkki dan Whitefish tanpa perlu menimbangnya secara langsung. Model ini dibuat untuk mendapatkan estimasi berat ikan dalam satuan gram dengan inputan :
+
+berat ikan dalam gram
+panjang vertikal dalam cm
+panjang diagonal dalam cm
+panjang silang dalam cm
+tinggi dalam cm
+lebar diagonal dalam cm
+menggunakan algoritma regresi linear.
 
 Bagian laporan ini mencakup:
 
 ### Problem Statements
 
 Menjelaskan pernyataan masalah latar belakang:
-- 
-- 
+- sulitnya mengetahui berat ikan jika tidak memiliki timbangan
+- sulitnya mengetahui berat ikan tanpa harus menimbangnya secara langsung
 
 ### Goals
 
 Menjelaskan tujuan dari pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
-
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
+- dapat mempermudah masyarakat dalam mengetahui berat ikan jika mereka tidak memiliki timbangan/tidak memegang ikannya secara langsung 
 
     ### Solution statements
-    - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
-    - Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
-
+    - Membuat model estimasi berat ikan menggunakan metode estimasi dengan algoritma regresi linear
+    - Deploy model yang sudah di buat agar dapat diakses oleh masyarakat umum
+    - 
 ## Data Understanding
 Dataset pasar ikan adalah kumpulan data yang terkait dengan berbagai spesies ikan dan karakteristiknya. Dataset ini disusun sedemikian rupa sehingga setiap baris berhubungan dengan satu ikan dengan spesiesnya dan berbagai ukuran fisik (panjang, tinggi, dan lebar)
 
@@ -52,33 +53,43 @@ Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
 - Width: Lebar diagonal ikan dalam CM
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+Pada tahapan data preparation yang dilakukan tidaklah banyak dikarenakan dataset yang dipakai sudah nyaris sesuai dengan algoritma yang digunakan. dikarenakan ada 1 kolom yang memiliki tipe data object maka perlu dilakukan konversi tipe data menjadi integer dengan cara:
+```bash
+label_encoder = LabelEncoder()
+
+# Terapkan LabelEncoder pada kolom 'smoker' dan simpan dalam kolom baru 'smoker2'
+df['Species2'] = label_encoder.fit_transform(df['Species'])
+```
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+1. Seleksi fitur:
+```bash
+features = df.drop(['Weight','Species'], axis=1)
+x = features
+y = df['Weight']
+x.shape, y.shape
+```
+3. Memisahkan data training dan testing
+```bash
+from sklearn.model_selection import train_test_split
+x_train, X_test, y_train, y_test = train_test_split(x,y,random_state=70)
+y_test.shape
+```
+5. Pembuatan model Regresi Linear
+```bash
+from sklearn.linear_model import LinearRegression
+lr = LinearRegression()
+lr.fit(x_train,y_train)
+pred = lr.predict(X_test)
+```
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
-
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
-
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+Metrik evaluasi yang digunakan adalah akurasi:
+```bashscore = lr.score(X_test, y_test)
+print('akurasi model regresi linier = ', score*100,"%")
+```
+akurasi yang didapatkan adalah 85.17% yang mana menunjukan jika model yang dibuat masih tergolong bagus dan dapat dipakai.
 
 ## Deployment
 [Estimasi Berat Ikan](https://tugas-uts-ardi.streamlit.app/)
-**---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
-
