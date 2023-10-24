@@ -5,20 +5,19 @@
 
 ## Domain Proyek
 
-Ikan sangat penting di Indonesia karena merupakan sumber mata pencaharian bagi jutaan nelayan, mendukung ekonomi lokal, dan berperan dalam ekosistem laut yang penting bagi keseimbangan lingkungan. Indonesia adalah salah satu negara dengan keragaman hayati laut yang luar biasa, dan konservasi serta pengelolaan sumber daya ikan menjadi kunci dalam menjaga kelangsungan hidup ikan dan mendukung kehidupan berkelanjutan di kepulauan Indonesia. 
+Ikan merupakan sumber protein yang berguna untuk mereka yang sedang melakukan diet daging merah dan menggunakan ikan sebagai pengganti sumber proteinnya. Penjualan ikan pun terus meningkat dari waktu ke waktu dikarenakan permintaan ikan yang meningkat. Pengukuran berat ikan merupakan hal penting dalam industri perikanan dan kelautan. Estimasi yang akurat tentang berat ikan dapat membantu nelayan, petani ikan, dan pengusaha perikanan untuk mengelola stok ikan, merencanakan produksi, dan mengoptimalkan proses bisnis mereka.
 
 ## Business Understanding
 
-Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
+Proyek ini dibuat untuk mempermudah siapapun yang ingin mengetahui berat ikan Perch, Bream, Roach, Pike,Smelt,Parkki dan Whitefish tanpa perlu menimbangnya secara langsung. Terlebih untuk industri yang hanya memiliki data.
 
 Bagian laporan ini mencakup:
 
 ### Problem Statements
 
 Menjelaskan pernyataan masalah latar belakang:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+- 
+- 
 
 ### Goals
 
