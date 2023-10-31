@@ -53,6 +53,22 @@ Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
 - Width: Lebar diagonal ikan dalam CM
 
 ## Data Preparation
+Pengecekan nilai yang kosong dalam dataset:
+```
+sns.heatmap(df.isnull())
+```
+
+![image](https://github.com/ardinursahwal/estimasi-berat-ikan/assets/148542995/4839e542-fd6b-4eb4-9b8b-0aa8e0178a92)
+
+cek korelasi antar antribut:
+```
+plt.figure(figsize=(10,8))
+sns.heatmap(df.corr(),annot=True)
+```
+![image](https://github.com/ardinursahwal/estimasi-berat-ikan/assets/148542995/4a92cd55-61c0-443d-98db-b96be4cb0e38)
+
+Hasil yang cukup bagus, lanjut ketahapan selanjutnya.
+
 Pada tahapan data preparation yang dilakukan tidaklah banyak dikarenakan dataset yang dipakai sudah nyaris sesuai dengan algoritma yang digunakan. dikarenakan ada 1 kolom yang memiliki tipe data object maka perlu dilakukan konversi tipe data menjadi integer dengan cara:
 ```bash
 label_encoder = LabelEncoder()
@@ -60,6 +76,18 @@ label_encoder = LabelEncoder()
 # Terapkan LabelEncoder pada kolom 'smoker' dan simpan dalam kolom baru 'smoker2'
 df['Species2'] = label_encoder.fit_transform(df['Species'])
 ```
+Visualisasi jumlah ikan berdasarkan spesies:
+```
+Specieses = df.groupby('Species').count()[['Width']].reset_index()
+Specieses = Specieses.rename(columns={'Width':'Number Of Fishes'})
+```
+```
+fig = plt.figure(figsize=(15,5))
+sns.barplot(x=Specieses['Species'], y=Specieses['Number Of Fishes'], color='royalblue')
+plt.xticks(rotation=60)
+plt.show()
+```
+![image](https://github.com/ardinursahwal/estimasi-berat-ikan/assets/148542995/4ad144f5-b691-4397-ac8f-9dbcdbd65e5b)
 
 ## Modeling
 1. Seleksi fitur:
